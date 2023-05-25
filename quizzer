@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+
+
+import os
+import sys
+
+
+def not_empty(line):
+    m = search('^\s+$', line)
+    return false if m else true
+
+
+def next_paragaph(stream):
+    lines = []
+    line = steam.readline()
+    while (not_empty(line)):
+        lines.append(line)
+        line = steam.readline()
+    return lines
+
+
+def split_into_words():
+    pass
+
+
+def get_starred_words():
+    pass
+
+
+def parse(stream):
+    for p in next_paragaph():
+        words = split_into_words(p)
+        starred_words = get_starred_words(words)
+        pass
+
+
+def main():
+    args = sys.argv[1:]
+    if len(args) > 0:
+        for f in args[1:]:
+            with open(f, "r") as fh:
+                parse(fh)
+    else:
+        parse(sys.stdin)
+
+
+def run_tests():
+    pass
+
+
+if __name__ == '__main__':
+    if os.env.has_key('TEST'):
+        run_tests()
+    else:
+       main()
